@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мир Очкоff — Премиальная оптика в Ташкенте</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --card: #181818;
+      --border: rgba(255,255,255,0.08);
+      --white: #ffffff;
+      --gray: #888888;
+      --light: #cccccc;
+      --green: #00C853;
+      --green-soft: rgba(0,200,83,0.12);
+      --font: 'Inter', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--green); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--light);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--green);
+      color: var(--black);
+      padding: 10px 22px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 48px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(0,200,83,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-soft);
+      border: 1px solid rgba(0,200,83,0.3);
+      color: var(--green);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      margin-bottom: 32px;
+      width: fit-content;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+    }
+    .hero h1 {
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -0.04em;
+      max-width: 14ch;
+      margin-bottom: 24px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--green);
+    }
+    .hero p {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--light);
+      max-width: 48ch;
+      margin-bottom: 40px;
+      line-height: 1.65;
+    }
+    .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--green);
+      color: var(--black);
+      padding: 14px 28px;
+      border-radius: 100px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-ghost {
+      color: var(--light);
+      padding: 14px 28px;
+      border-radius: 100px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.3); color: var(--white); }
+
+    /* STATS */
+    .stats {
+      padding: 80px 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stat {
+      background: var(--black);
+      padding: 48px 48px;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: clamp(48px, 6vw, 72px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: 15px;
+      color: var(--gray);
+      font-weight: 400;
+    }
+
+    /* SECTION */
+    section { padding: 100px 48px; }
+    .section-tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+    h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    h2 em { font-style: normal; color: var(--green); }
+    .section-lead {
+      font-size: 18px;
+      color: var(--light);
+      max-width: 52ch;
+      line-height: 1.65;
+      margin-bottom: 56px;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .about-card .founder-name {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .about-card .founder-role {
+      font-size: 14px;
+      color: var(--green);
+      font-weight: 500;
+    }
+    .about-card p {
+      font-size: 15px;
+      color: var(--light);
+      line-height: 1.7;
+    }
+    .expertise-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .chip {
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 13px;
+      color: var(--light);
+      font-weight: 400;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .service-card:hover {
+      border-color: rgba(0,200,83,0.3);
+      transform: translateY(-4px);
+    }
+    .service-icon {
+      width: 44px; height: 44px;
+      background: var(--green-soft);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      font-size: 14px;
+      color: var(--light);
+      line-height: 1.65;
+    }
+
+    /* WHY */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .why-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .why-num {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--green);
+      font-variant-numeric: tabular-nums;
+      padding-top: 3px;
+      min-width: 24px;
+    }
+    .why-item h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+    .why-item p { font-size: 14px; color: var(--light); line-height: 1.65; }
+
+    /* CONTACT */
+    .contact-wrap {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .contact-wrap h2 { margin-bottom: 12px; }
+    .contact-wrap p { color: var(--light); font-size: 16px; line-height: 1.65; margin-bottom: 32px; }
+    .contact-links { display: flex; flex-direction: column; gap: 12px; }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 500;
+      transition: border-color 0.2s;
+    }
+    .contact-link:hover { border-color: rgba(0,200,83,0.4); }
+    .contact-link .icon {
+      width: 36px; height: 36px;
+      background: var(--green-soft);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 40px 48px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer .logo { font-size: 16px; font-weight: 700; letter-spacing: -0.02em; }
+    footer .logo span { color: var(--green); }
+    footer p { font-size: 13px; color: var(--gray); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .hero { padding: 120px 24px 60px; }
+      .stats { grid-template-columns: 1fr; padding: 0; }
+      .stat { padding: 32px 24px; }
+      section { padding: 64px 24px; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .contact-wrap { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Мир <span>Очкоff</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">О нас</a></li>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#why">Почему мы</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Записаться</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-tag">Премиальная оптика · Ташкент</div>
+    <h1>Видеть <em>мир</em> в лучшем свете</h1>
+    <p>Сеть салонов премиальной оптики в Ташкенте. 23 года экспертизы, команда профессионалов и индивидуальный подход к каждому клиенту.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Записаться на подбор</a>
+      <a href="#services" class="btn-ghost">Наши услуги</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">23+</div>
+      <div class="stat-label">лет в оптике</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">7+</div>
+      <div class="stat-label">человек в команде</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">№1</div>
+      <div class="stat-label">премиум-оптика Ташкента</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div>
+        <div class="section-tag">О нас</div>
+        <h2>Мы строим <em>стандарты</em> сервиса в оптике</h2>
+        <p class="section-lead">Мир Очкоff — это не просто магазин очков. Это место, где к каждому клиенту относятся как к личности: подбирают оправу под лицо, стиль и образ жизни.</p>
+        <p style="color: var(--light); font-size: 15px; line-height: 1.7;">За 23 года мы помогли тысячам клиентов в Ташкенте увидеть мир чётче — и выглядеть при этом безупречно. Каждый салон сети — это пространство, где премиальный сервис является нормой, а не исключением.</p>
+      </div>
+      <div class="about-card">
+        <div>
+          <div class="founder-name">Инна Ким</div>
+          <div class="founder-role" style="margin-top:4px;">Основатель · Мир Очкоff</div>
+        </div>
+        <p>«Я пришла в оптику 23 года назад и влюбилась в профессию навсегда. Мы не продаём очки — мы помогаем людям видеть и чувствовать себя уверенно.»</p>
+        <div class="expertise-chips">
+          <span class="chip">Продажи</span>
+          <span class="chip">Премиум-сервис</span>
+          <span class="chip">Управление командой</span>
+          <span class="chip">Розничный бизнес</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="background: var(--dark); margin: 0; padding: 100px 48px;">
+    <div class="section-tag">Услуги</div>
+    <h2>Что мы <em>делаем</em></h2>
+    <p class="section-lead">Полный спектр оптических услуг — от проверки зрения до индивидуального подбора оправы.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">👁</div>
+        <h3>Проверка зрения</h3>
+        <p>Профессиональная диагностика у опытного специалиста. Точный подбор линз для чёткого зрения.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🕶</div>
+        <h3>Подбор оправы</h3>
+        <p>Индивидуальный стайлинг: подбираем оправу под форму лица, цветотип и образ жизни.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Премиальные линзы</h3>
+        <p>Широкий выбор контактных линз ведущих мировых брендов. Консультация и подбор в подарок.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Ремонт и уход</h3>
+        <p>Быстрый ремонт оправ, замена линз, регулировка и чистка — прямо в салоне.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💎</div>
+        <h3>Солнцезащитные очки</h3>
+        <p>Коллекции премиальных брендов. Защита зрения и безупречный стиль в одном.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎁</div>
+        <h3>Корпоративные заказы</h3>
+        <p>Очки и линзы для сотрудников компаний. Специальные условия для корпоративных клиентов.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why">
+    <div class="section-tag">Почему мы</div>
+    <h2>В чём наше <em>отличие</em></h2>
+    <p class="section-lead">23 года в оптике — это не просто опыт. Это тысячи довольных клиентов и отточенный до деталей сервис.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div>
+          <h4>Экспертиза 23 года</h4>
+          <p>Мы работаем в оптике с 2001 года. За это время построили репутацию надёжного партнёра для тысяч семей Ташкента.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div>
+          <h4>Индивидуальный подход</h4>
+          <p>Каждый клиент уникален. Мы не даём шаблонных советов — только персональные решения под ваш запрос.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div>
+          <h4>Команда профессионалов</h4>
+          <p>Оптики, стилисты и консультанты, которые любят своё дело. Мы постоянно учимся и следим за мировыми трендами.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div>
+          <h4>Премиальный сервис</h4>
+          <p>Уровень сервиса, который обычно встречается в европейских столицах — теперь в Ташкенте. Комфорт и внимание на каждом шаге.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="background: var(--dark); margin: 0; padding: 100px 48px;">
+    <div class="contact-wrap">
+      <div>
+        <div class="section-tag">Контакты</div>
+        <h2>Запишитесь<br>на <em>консультацию</em></h2>
+        <p>Расскажите о своём запросе — подберём время и формат, удобный для вас.</p>
+        <a href="https://t.me/innakimoptika" class="btn-primary">Написать в Telegram</a>
+      </div>
+      <div class="contact-links">
+        <a href="https://t.me/innakimoptika" class="contact-link">
+          <div class="icon">✈️</div>
+          <div>
+            <div>Telegram</div>
+            <div style="font-size:13px; color: var(--gray); font-weight:400;">@innakimoptika</div>
+          </div>
+        </a>
+        <a href="https://linzauzb.uz" class="contact-link" target="_blank">
+          <div class="icon">🌐</div>
+          <div>
+            <div>Сайт</div>
+            <div style="font-size:13px; color: var(--gray); font-weight:400;">linzauzb.uz</div>
+          </div>
+        </a>
+        <a href="#" class="contact-link">
+          <div class="icon">📍</div>
+          <div>
+            <div>Адрес</div>
+            <div style="font-size:13px; color: var(--gray); font-weight:400;">Ташкент, Узбекистан</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">Мир <span>Очкоff</span></div>
+    <p>© 2026 Мир Очкоff · Ташкент · Премиальная оптика</p>
+  </footer>
+
+</body>
+</html>
