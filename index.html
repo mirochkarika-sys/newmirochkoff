@@ -3,423 +3,191 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MirOchkoff — Премиальная оптика в Ташкенте</title>
+  <title>MirOchkoff — Контактные линзы, очки, оправы · Ташкент</title>
+  <meta name="description" content="Сеть салонов оптики MirOchkoff в Ташкенте. Контактные линзы, очки, оправы. Твои глаза — главная драгоценность!">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --black:      #111111;
-      --dark:       #222222;
-      --white:      #ffffff;
-      --pink:       #E8006E;
-      --pink-light: #FFE0EF;
-      --pink-soft:  #FFF3F8;
-      --pink-mid:   #FFB8D9;
-      --gray:       #777777;
-      --light-gray: #f7f7f7;
-      --border:     rgba(232,0,110,0.15);
-      --sans:       'Inter', -apple-system, sans-serif;
-      --serif:      'Playfair Display', Georgia, serif;
+      --black:     #111111;
+      --white:     #ffffff;
+      --pink:      #E8006E;
+      --pink-mid:  #FF4DA0;
+      --pink-l:    #FFE0EF;
+      --pink-s:    #FFF5FA;
+      --gray:      #666666;
+      --light:     #f7f7f7;
+      --border:    rgba(232,0,110,0.14);
+      --sans:      'Inter', -apple-system, sans-serif;
+      --serif:     'Playfair Display', Georgia, serif;
     }
-
     html { scroll-behavior: smooth; }
-    body {
-      background: var(--white);
-      color: var(--black);
-      font-family: var(--sans);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+    body { background: #fff; color: var(--black); font-family: var(--sans); line-height: 1.6; -webkit-font-smoothing: antialiased; }
 
-    /* ===== NAV ===== */
+    /* NAV */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 18px 56px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(12px);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 16px 56px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(255,255,255,0.94); backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(232,0,110,0.1);
     }
-    .logo-img { height: 36px; width: auto; }
-    .logo-text {
-      font-family: var(--sans);
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--pink);
-      letter-spacing: -0.02em;
-    }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a {
-      color: var(--dark);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
+    .logo-img { height: 38px; width: auto; display: block; }
+    .logo-text { font-family: var(--sans); font-size: 22px; font-weight: 700; color: var(--pink); letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: var(--black); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
     .nav-links a:hover { color: var(--pink); }
-    .nav-cta {
-      background: var(--pink);
-      color: var(--white);
-      padding: 11px 24px;
-      border-radius: 100px;
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .nav-cta:hover { opacity: 0.85; }
+    .nav-cta { background: var(--pink); color: #fff; padding: 10px 22px; border-radius: 100px; font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity .2s; }
+    .nav-cta:hover { opacity: .85; }
 
-    /* ===== HERO ===== */
+    /* HERO */
     .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 120px 56px 80px;
-      gap: 64px;
-      background: linear-gradient(135deg, var(--white) 55%, var(--pink-soft) 100%);
-      position: relative;
-      overflow: hidden;
+      min-height: 100vh; padding: 130px 56px 80px;
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: center;
+      background: linear-gradient(135deg, #fff 50%, var(--pink-s) 100%);
+      position: relative; overflow: hidden;
     }
     .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; right: -80px;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, var(--pink-light) 0%, transparent 65%);
+      content: ''; position: absolute; bottom: -120px; right: -120px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, var(--pink-l) 0%, transparent 65%);
       pointer-events: none;
     }
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--pink-light);
-      color: var(--pink);
-      padding: 7px 16px;
-      border-radius: 100px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      margin-bottom: 28px;
-      width: fit-content;
-    }
-    .hero-tag::before {
-      content: '✦';
-      font-size: 10px;
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--pink-l); color: var(--pink);
+      padding: 7px 16px; border-radius: 100px;
+      font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      margin-bottom: 28px; width: fit-content;
     }
     .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(42px, 5.5vw, 72px);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 24px;
-      color: var(--black);
+      font-family: var(--serif); font-size: clamp(44px, 5.5vw, 76px);
+      font-weight: 700; line-height: 1.05; letter-spacing: -.03em; margin-bottom: 20px;
     }
-    .hero h1 em {
-      font-style: italic;
-      color: var(--pink);
+    .hero h1 em { font-style: italic; color: var(--pink); }
+    .hero .slogan {
+      font-size: clamp(17px, 2vw, 22px); font-style: italic;
+      color: var(--pink); font-family: var(--serif); margin-bottom: 16px;
     }
-    .hero p {
-      font-size: 17px;
-      color: var(--gray);
-      max-width: 44ch;
-      margin-bottom: 40px;
-      line-height: 1.7;
-    }
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--pink);
-      color: var(--white);
-      padding: 14px 28px;
-      border-radius: 100px;
-      font-size: 15px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .btn-primary:hover { opacity: 0.85; }
-    .btn-ghost {
-      color: var(--black);
-      padding: 14px 28px;
-      border-radius: 100px;
-      font-size: 15px;
-      font-weight: 500;
-      text-decoration: none;
-      border: 1.5px solid rgba(0,0,0,0.15);
-      transition: border-color 0.2s;
-    }
-    .btn-ghost:hover { border-color: var(--pink); color: var(--pink); }
-    .hero-visual {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      position: relative;
-      z-index: 1;
-    }
-    .hero-card-big {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 32px;
-      box-shadow: 0 8px 40px rgba(232,0,110,0.08);
-    }
-    .hero-card-big .eyebrow {
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--pink);
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-    .hero-card-big .quote {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 20px;
-      line-height: 1.5;
-      color: var(--black);
-    }
-    .hero-card-big .author {
-      margin-top: 16px;
-      font-size: 13px;
-      color: var(--gray);
-    }
-    .hero-card-big .author strong { color: var(--black); }
-    .hero-cards-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .hero-stat {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 24px;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(232,0,110,0.06);
-    }
-    .hero-stat .num {
-      font-size: 40px;
-      font-weight: 700;
-      color: var(--pink);
-      line-height: 1;
-      letter-spacing: -0.03em;
-    }
-    .hero-stat .label {
-      font-size: 13px;
-      color: var(--gray);
-      margin-top: 4px;
-    }
+    .hero p { font-size: 16px; color: var(--gray); max-width: 44ch; margin-bottom: 36px; line-height: 1.7; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn { padding: 13px 26px; border-radius: 100px; font-size: 15px; font-weight: 600; text-decoration: none; transition: opacity .2s, border-color .2s, color .2s; display: inline-block; }
+    .btn-pink { background: var(--pink); color: #fff; }
+    .btn-pink:hover { opacity: .85; }
+    .btn-out { border: 1.5px solid rgba(0,0,0,0.14); color: var(--black); }
+    .btn-out:hover { border-color: var(--pink); color: var(--pink); }
 
-    /* ===== STATS BAR ===== */
-    .stats-bar {
-      background: var(--black);
-      padding: 56px 56px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
+    /* Hero right side cards */
+    .hero-right { display: flex; flex-direction: column; gap: 16px; position: relative; z-index: 1; }
+    .h-quote {
+      background: #fff; border: 1px solid var(--border); border-radius: 22px;
+      padding: 30px 32px; box-shadow: 0 8px 40px rgba(232,0,110,.07);
     }
-    .stats-bar .stat {
-      text-align: center;
-      padding: 8px 32px;
-      border-right: 1px solid rgba(255,255,255,0.08);
+    .h-quote .lbl { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--pink); margin-bottom: 12px; }
+    .h-quote blockquote { font-family: var(--serif); font-style: italic; font-size: 19px; line-height: 1.5; color: var(--black); }
+    .h-quote .who { margin-top: 14px; font-size: 13px; color: var(--gray); }
+    .h-quote .who strong { color: var(--black); }
+    .h-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .h-stat {
+      background: #fff; border: 1px solid var(--border); border-radius: 18px;
+      padding: 22px; text-align: center; box-shadow: 0 4px 20px rgba(232,0,110,.05);
     }
-    .stats-bar .stat:last-child { border-right: none; }
-    .stats-bar .num {
-      font-size: clamp(40px, 5vw, 60px);
-      font-weight: 700;
-      color: var(--pink);
-      letter-spacing: -0.04em;
-      line-height: 1;
-    }
-    .stats-bar .label { font-size: 14px; color: rgba(255,255,255,0.55); margin-top: 6px; }
+    .h-stat .n { font-size: 38px; font-weight: 700; color: var(--pink); line-height: 1; letter-spacing: -.03em; }
+    .h-stat .l { font-size: 12px; color: var(--gray); margin-top: 4px; }
 
-    /* ===== SECTIONS ===== */
-    section { padding: 96px 56px; }
-    .section-tag {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--pink);
-      margin-bottom: 14px;
-    }
-    h2 {
-      font-family: var(--serif);
-      font-size: clamp(32px, 4vw, 52px);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-    }
+    /* STATS BAR */
+    .sbar { background: var(--black); padding: 52px 56px; display: grid; grid-template-columns: repeat(3,1fr); }
+    .sbar-item { text-align: center; padding: 0 32px; border-right: 1px solid rgba(255,255,255,.07); }
+    .sbar-item:last-child { border-right: none; }
+    .sbar-item .n { font-size: clamp(40px,5vw,60px); font-weight: 700; color: var(--pink); line-height: 1; letter-spacing: -.04em; }
+    .sbar-item .l { font-size: 14px; color: rgba(255,255,255,.5); margin-top: 6px; }
+
+    /* SECTIONS */
+    section { padding: 92px 56px; }
+    .s-tag { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--pink); margin-bottom: 14px; }
+    h2 { font-family: var(--serif); font-size: clamp(30px,4vw,50px); font-weight: 700; line-height: 1.1; letter-spacing: -.02em; margin-bottom: 14px; }
     h2 em { font-style: italic; color: var(--pink); }
-    .section-lead {
-      font-size: 17px;
-      color: var(--gray);
-      max-width: 50ch;
-      line-height: 1.7;
-      margin-bottom: 52px;
-    }
+    .s-lead { font-size: 17px; color: var(--gray); max-width: 52ch; line-height: 1.7; margin-bottom: 48px; }
 
-    /* ===== ABOUT ===== */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
+    /* ABOUT */
+    .about-g { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .about-card {
+      background: var(--pink-s); border: 1px solid var(--border);
+      border-radius: 24px; padding: 40px;
     }
-    .about-founder {
-      background: var(--pink-soft);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 40px;
-    }
-    .founder-name {
-      font-family: var(--serif);
-      font-size: 26px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-    .founder-role { font-size: 14px; color: var(--pink); font-weight: 600; margin-bottom: 20px; }
-    .about-founder p { font-size: 15px; color: #444; line-height: 1.75; margin-bottom: 20px; }
+    .f-name { font-family: var(--serif); font-size: 26px; font-weight: 700; margin-bottom: 4px; }
+    .f-role { font-size: 14px; color: var(--pink); font-weight: 600; margin-bottom: 20px; }
+    .about-card p { font-size: 15px; color: #444; line-height: 1.75; margin-bottom: 20px; }
     .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-    .chip {
-      padding: 6px 14px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      font-size: 13px;
-      color: var(--dark);
-    }
+    .chip { padding: 6px 14px; background: #fff; border: 1px solid var(--border); border-radius: 100px; font-size: 13px; color: var(--black); }
 
-    /* ===== SERVICES ===== */
-    .services-wrap { background: var(--pink-soft); margin: 0; padding: 96px 56px; }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+    /* PRODUCTS */
+    .prod-wrap { background: var(--pink-s); padding: 92px 56px; }
+    .prod-g { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .prod-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 20px;
+      padding: 30px; transition: box-shadow .2s, transform .2s;
     }
-    .service-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 32px;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .service-card:hover {
-      box-shadow: 0 12px 40px rgba(232,0,110,0.1);
-      transform: translateY(-4px);
-    }
-    .service-icon {
-      width: 48px; height: 48px;
-      background: var(--pink-light);
-      border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-    .service-card h3 {
-      font-size: 17px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 10px;
-    }
-    .service-card p { font-size: 14px; color: var(--gray); line-height: 1.65; }
+    .prod-card:hover { box-shadow: 0 12px 40px rgba(232,0,110,.1); transform: translateY(-4px); }
+    .prod-icon { width: 48px; height: 48px; background: var(--pink-l); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px; }
+    .prod-card h3 { font-size: 17px; font-weight: 600; letter-spacing: -.01em; margin-bottom: 8px; }
+    .prod-card p { font-size: 13px; color: var(--gray); line-height: 1.65; }
 
-    /* ===== WHY ===== */
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-    .why-card {
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 20px;
-      padding: 32px;
-      display: flex;
-      gap: 20px;
-    }
-    .why-num {
-      font-size: 36px;
-      font-weight: 700;
-      color: var(--pink-light);
-      line-height: 1;
-      letter-spacing: -0.03em;
-      min-width: 44px;
-    }
-    .why-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+    /* WHY */
+    .why-g { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .why-card { border: 1px solid rgba(0,0,0,.07); border-radius: 20px; padding: 30px; display: flex; gap: 18px; }
+    .why-n { font-size: 34px; font-weight: 700; color: var(--pink-l); line-height: 1; letter-spacing: -.03em; min-width: 42px; }
+    .why-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 7px; }
     .why-card p { font-size: 14px; color: var(--gray); line-height: 1.65; }
 
-    /* ===== CONTACT ===== */
+    /* HOURS */
+    .hours-g { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .hours-card { background: var(--pink-s); border: 1px solid var(--border); border-radius: 18px; padding: 28px 32px; }
+    .hours-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 10px; }
+    .hours-card p { font-size: 15px; color: var(--gray); }
+    .hours-card .time { font-size: 22px; font-weight: 700; color: var(--pink); letter-spacing: -.02em; margin-top: 4px; }
+
+    /* CONTACT */
     .contact-inner {
-      background: var(--black);
-      border-radius: 32px;
-      padding: 72px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
+      background: var(--black); border-radius: 28px; padding: 68px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
     }
-    .contact-inner h2 { color: var(--white); margin-bottom: 12px; }
-    .contact-inner p { color: rgba(255,255,255,0.55); font-size: 16px; line-height: 1.7; margin-bottom: 32px; }
-    .contact-links { display: flex; flex-direction: column; gap: 12px; }
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 18px 22px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px;
-      text-decoration: none;
-      color: var(--white);
-      font-size: 15px;
-      font-weight: 500;
-      transition: border-color 0.2s, background 0.2s;
+    .contact-inner h2 { color: #fff; margin-bottom: 12px; }
+    .contact-inner .s-tag { color: var(--pink-mid); }
+    .contact-inner > div > p { color: rgba(255,255,255,.5); font-size: 16px; line-height: 1.7; margin-bottom: 30px; }
+    .c-links { display: flex; flex-direction: column; gap: 12px; }
+    .c-link {
+      display: flex; align-items: center; gap: 16px;
+      padding: 17px 22px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px; text-decoration: none; color: #fff; font-size: 15px; font-weight: 500;
+      transition: border-color .2s, background .2s;
     }
-    .contact-link:hover { border-color: var(--pink); background: rgba(232,0,110,0.08); }
-    .c-icon {
-      width: 40px; height: 40px;
-      background: var(--pink);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px;
-      flex-shrink: 0;
-    }
-    .c-label { font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 400; margin-top: 2px; }
+    .c-link:hover { border-color: var(--pink); background: rgba(232,0,110,.08); }
+    .c-icon { width: 40px; height: 40px; background: var(--pink); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 19px; flex-shrink: 0; }
+    .c-sub { font-size: 12px; color: rgba(255,255,255,.38); margin-top: 2px; font-weight: 400; }
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--black);
-      padding: 32px 56px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    footer .f-logo { height: 28px; }
-    footer .f-logo-text { font-size: 16px; font-weight: 700; color: var(--pink); }
-    footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
+    /* FOOTER */
+    footer { background: var(--black); padding: 30px 56px; border-top: 1px solid rgba(255,255,255,.06); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .f-logo-img { height: 28px; }
+    .f-logo-text { font-size: 16px; font-weight: 700; color: var(--pink); }
+    footer p { font-size: 13px; color: rgba(255,255,255,.28); }
 
-    /* ===== RESPONSIVE ===== */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
-      nav { padding: 16px 24px; }
+      nav { padding: 14px 20px; }
       .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 40px; }
-      .hero-visual { display: none; }
-      .stats-bar { grid-template-columns: 1fr; gap: 24px; padding: 48px 24px; }
-      .stats-bar .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 24px; }
-      .stats-bar .stat:last-child { border-bottom: none; }
-      section { padding: 64px 24px; }
-      .services-wrap { padding: 64px 24px; }
-      .about-grid { grid-template-columns: 1fr; gap: 32px; }
-      .services-grid { grid-template-columns: 1fr; }
-      .why-grid { grid-template-columns: 1fr; }
-      .contact-inner { grid-template-columns: 1fr; padding: 40px 28px; gap: 40px; }
-      footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 24px; }
+      .hero { grid-template-columns: 1fr; padding: 100px 20px 56px; gap: 36px; }
+      .hero-right { display: none; }
+      .sbar { grid-template-columns: 1fr; padding: 40px 20px; gap: 24px; }
+      .sbar-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding-bottom: 20px; }
+      .sbar-item:last-child { border-bottom: none; }
+      section, .prod-wrap { padding: 56px 20px; }
+      .about-g, .why-g, .hours-g { grid-template-columns: 1fr; gap: 20px; }
+      .prod-g { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; padding: 36px 24px; gap: 36px; }
+      footer { padding: 24px 20px; flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -427,76 +195,64 @@
 
   <!-- NAV -->
   <nav>
-    <img src="logo.png" alt="MirOchkoff" class="logo-img" onerror="this.style.display='none';document.getElementById('logo-text').style.display='block'">
-    <span id="logo-text" class="logo-text" style="display:none">MirOchkoff</span>
+    <div>
+      <img src="logo.png" alt="MirOchkoff" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="logo-text" style="display:none">MirOchkoff</span>
+    </div>
     <ul class="nav-links">
       <li><a href="#about">О нас</a></li>
-      <li><a href="#services">Услуги</a></li>
+      <li><a href="#products">Продукты</a></li>
       <li><a href="#why">Почему мы</a></li>
       <li><a href="#contact">Контакты</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Записаться</a>
+    <a href="tel:+998977722243" class="nav-cta">+998 97 772-22-43</a>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div>
-      <div class="hero-tag">Премиальная оптика · Ташкент</div>
-      <h1>Видеть мир<br>в <em>лучшем</em> свете</h1>
-      <p>Сеть салонов оптики MirOchkoff — 23 года опыта, команда профессионалов и индивидуальный подход к каждому клиенту.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Записаться на подбор</a>
-        <a href="#services" class="btn-ghost">Наши услуги</a>
+      <div class="hero-badge">✦ Ташкент · Оптика с 2001 года</div>
+      <h1>Твои глаза —<br><em>главная</em><br>драгоценность</h1>
+      <p class="slogan">Удивить с первого взгляда.</p>
+      <p>Сеть салонов оптики MirOchkoff в Ташкенте. Контактные линзы, очки, оправы — всё для идеального зрения и стильного образа.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-pink">Записаться на консультацию</a>
+        <a href="#products" class="btn btn-out">Наши продукты</a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-card-big">
-        <div class="eyebrow">Основатель · Инна Ким</div>
-        <div class="quote">«Мы не продаём очки — мы помогаем людям видеть и чувствовать себя уверенно.»</div>
-        <div class="author"><strong>Инна Ким</strong> · 23 года в оптике</div>
+    <div class="hero-right">
+      <div class="h-quote">
+        <div class="lbl">Основатель · Инна Ким</div>
+        <blockquote>«Мы не просто продаём очки — мы помогаем людям видеть мир чётче и чувствовать себя уверенно каждый день.»</blockquote>
+        <div class="who"><strong>Инна Ким</strong> · 23 года в оптике</div>
       </div>
-      <div class="hero-cards-row">
-        <div class="hero-stat">
-          <div class="num">23+</div>
-          <div class="label">лет опыта</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">7+</div>
-          <div class="label">специалистов</div>
-        </div>
+      <div class="h-stats">
+        <div class="h-stat"><div class="n">23+</div><div class="l">лет в оптике</div></div>
+        <div class="h-stat"><div class="n">7+</div><div class="l">специалистов</div></div>
       </div>
     </div>
   </section>
 
   <!-- STATS BAR -->
-  <div class="stats-bar">
-    <div class="stat">
-      <div class="num">23+</div>
-      <div class="label">лет в оптике</div>
-    </div>
-    <div class="stat">
-      <div class="num">7+</div>
-      <div class="label">человек в команде</div>
-    </div>
-    <div class="stat">
-      <div class="num">№1</div>
-      <div class="label">премиум-оптика Ташкента</div>
-    </div>
+  <div class="sbar">
+    <div class="sbar-item"><div class="n">23+</div><div class="l">лет в оптике</div></div>
+    <div class="sbar-item"><div class="n">7+</div><div class="l">человек в команде</div></div>
+    <div class="sbar-item"><div class="n">№1</div><div class="l">премиум-оптика Ташкента</div></div>
   </div>
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="about-grid">
+    <div class="about-g">
       <div>
-        <div class="section-tag">О нас</div>
-        <h2>Строим <em>стандарты</em><br>сервиса в оптике</h2>
-        <p class="section-lead">MirOchkoff — это не просто магазин очков. Это место, где к каждому клиенту относятся как к личности.</p>
-        <p style="font-size:15px; color:#444; line-height:1.75;">За 23 года мы помогли тысячам клиентов в Ташкенте увидеть мир чётче. Каждый салон сети — это пространство, где премиальный сервис является нормой, а не исключением.</p>
+        <div class="s-tag">О нас</div>
+        <h2>Строим <em>стандарты</em> сервиса в оптике</h2>
+        <p class="s-lead">MirOchkoff — это не просто магазин очков. Это пространство, где к каждому клиенту относятся как к личности.</p>
+        <p style="font-size:15px; color:#444; line-height:1.75">За 23 года мы помогли тысячам жителей Ташкента увидеть мир чётче. Профессиональная диагностика зрения, широкий ассортимент линз и оправ, индивидуальный подбор — всё в одном месте. Приходите в ближайший к вам филиал или заказывайте онлайн.</p>
       </div>
-      <div class="about-founder">
-        <div class="founder-name">Инна Ким</div>
-        <div class="founder-role">Основатель · MirOchkoff</div>
-        <p>«Я пришла в оптику 23 года назад и влюбилась в профессию навсегда. За это время мы выстроили команду, которая ценит каждого клиента.»</p>
+      <div class="about-card">
+        <div class="f-name">Инна Ким</div>
+        <div class="f-role">Основатель · MirOchkoff</div>
+        <p>«Я пришла в оптику 23 года назад и влюбилась в профессию навсегда. За это время мы выстроили команду, которая искренне любит своё дело и ценит каждого клиента.»</p>
         <div class="chips">
           <span class="chip">Продажи</span>
           <span class="chip">Премиум-сервис</span>
@@ -507,112 +263,128 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <div class="services-wrap" id="services">
-    <div class="section-tag">Услуги</div>
-    <h2>Что мы <em>делаем</em></h2>
-    <p class="section-lead">Полный спектр оптических услуг — от проверки зрения до индивидуального подбора оправы.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">👁</div>
-        <h3>Проверка зрения</h3>
-        <p>Профессиональная диагностика у опытного специалиста. Точный подбор линз для чёткого зрения.</p>
+  <!-- PRODUCTS -->
+  <div class="prod-wrap" id="products">
+    <div class="s-tag">Продукты</div>
+    <h2>Всё для <em>идеального</em> зрения</h2>
+    <p class="s-lead">Контактные линзы, очки, оправы, аксессуары — широкий выбор по 200+ ценовым категориям.</p>
+    <div class="prod-g">
+      <div class="prod-card">
+        <div class="prod-icon">👓</div>
+        <h3>Оправы</h3>
+        <p>По полу, материалу, форме, стране производства и цвету. Мужские, женские и унисекс-коллекции ведущих брендов.</p>
       </div>
-      <div class="service-card">
-        <div class="service-icon">🕶</div>
-        <h3>Подбор оправы</h3>
-        <p>Индивидуальный стайлинг: подбираем оправу под форму лица, цветотип и образ жизни.</p>
+      <div class="prod-card">
+        <div class="prod-icon">🎨</div>
+        <h3>Цветные линзы</h3>
+        <p>Ежемесячные, квартальные, полугодовые и годовые. Десятки оттенков на любой образ.</p>
       </div>
-      <div class="service-card">
-        <div class="service-icon">✨</div>
-        <h3>Премиальные линзы</h3>
-        <p>Широкий выбор контактных линз ведущих мировых брендов. Консультация и подбор в подарок.</p>
+      <div class="prod-card">
+        <div class="prod-icon">👁</div>
+        <h3>Прозрачные линзы</h3>
+        <p>Сферические, торические, мультифокальные и бифокальные. Для любого типа зрения.</p>
       </div>
-      <div class="service-card">
-        <div class="service-icon">🔧</div>
-        <h3>Ремонт и уход</h3>
-        <p>Быстрый ремонт оправ, замена линз, регулировка и чистка — прямо в салоне.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">💎</div>
+      <div class="prod-card">
+        <div class="prod-icon">☀️</div>
         <h3>Солнцезащитные очки</h3>
-        <p>Коллекции премиальных брендов. Защита зрения и безупречный стиль в одном.</p>
+        <p>Премиальные бренды и функциональная защита. Стиль и здоровье зрения в одном.</p>
       </div>
-      <div class="service-card">
-        <div class="service-icon">🎁</div>
-        <h3>Корпоративные заказы</h3>
-        <p>Очки и линзы для сотрудников компаний. Специальные условия для корпоративных клиентов.</p>
+      <div class="prod-card">
+        <div class="prod-icon">🧒</div>
+        <h3>Детская оптика</h3>
+        <p>Специальные коллекции для детей: прочные, лёгкие, безопасные оправы и линзы.</p>
+      </div>
+      <div class="prod-card">
+        <div class="prod-icon">💊</div>
+        <h3>Растворы и аксессуары</h3>
+        <p>Растворы, капли, таблетки и контейнеры для линз. Всё необходимое для ухода.</p>
       </div>
     </div>
   </div>
 
   <!-- WHY -->
   <section id="why">
-    <div class="section-tag">Почему мы</div>
+    <div class="s-tag">Почему мы</div>
     <h2>В чём наше <em>отличие</em></h2>
-    <p class="section-lead">23 года в оптике — это тысячи довольных клиентов и отточенный до деталей сервис.</p>
-    <div class="why-grid">
+    <p class="s-lead">23 года в оптике — это тысячи довольных клиентов и сервис, отточенный до деталей.</p>
+    <div class="why-g">
       <div class="why-card">
-        <div class="why-num">01</div>
+        <div class="why-n">01</div>
         <div>
           <h4>Экспертиза 23 года</h4>
-          <p>Работаем с 2001 года. Построили репутацию надёжного партнёра для тысяч семей Ташкента.</p>
+          <p>Работаем с 2001 года. За это время помогли тысячам семей Ташкента — и знаем о зрении всё.</p>
         </div>
       </div>
       <div class="why-card">
-        <div class="why-num">02</div>
+        <div class="why-n">02</div>
         <div>
-          <h4>Индивидуальный подход</h4>
-          <p>Каждый клиент уникален. Только персональные решения — никаких шаблонных советов.</p>
+          <h4>Индивидуальный подбор</h4>
+          <p>Каждый клиент уникален. Подбираем оправу под лицо, стиль, образ жизни и бюджет.</p>
         </div>
       </div>
       <div class="why-card">
-        <div class="why-num">03</div>
+        <div class="why-n">03</div>
         <div>
           <h4>Команда профессионалов</h4>
-          <p>Оптики и стилисты, которые любят своё дело и следят за мировыми трендами.</p>
+          <p>7+ специалистов, которые любят своё дело. Регулярное обучение, мировые тренды.</p>
         </div>
       </div>
       <div class="why-card">
-        <div class="why-num">04</div>
+        <div class="why-n">04</div>
         <div>
-          <h4>Премиальный сервис</h4>
-          <p>Уровень, который обычно встречается в европейских столицах — теперь в Ташкенте.</p>
+          <h4>Доступные цены</h4>
+          <p>Ассортимент по 200+ ценовым категориям. Высокое качество не должно стоить дорого.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- HOURS -->
+  <section style="background: var(--pink-s); padding: 72px 56px;">
+    <div class="s-tag">Режим работы</div>
+    <h2>Мы <em>ждём</em> вас</h2>
+    <p class="s-lead">Ташкент · площадь Хамид Олимжон, здание 2Б</p>
+    <div class="hours-g">
+      <div class="hours-card">
+        <h4>Понедельник — Суббота</h4>
+        <div class="time">10:00 — 19:00</div>
+      </div>
+      <div class="hours-card">
+        <h4>Воскресенье</h4>
+        <div class="time">11:00 — 18:00</div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
-  <section id="contact" style="background: var(--pink-soft);">
+  <section id="contact">
     <div class="contact-inner">
       <div>
-        <div class="section-tag" style="color: var(--pink-mid);">Контакты</div>
-        <h2>Запишитесь на <em>консультацию</em></h2>
-        <p>Расскажите о своём запросе — подберём время и формат, удобный для вас.</p>
-        <a href="https://t.me/innakimoptika" class="btn-primary">Написать в Telegram</a>
+        <div class="s-tag">Контакты</div>
+        <h2>Свяжитесь с <em>нами</em></h2>
+        <p>Приходите в салон, звоните или пишите — ответим быстро и поможем с любым вопросом.</p>
+        <a href="tel:+998977722243" class="btn btn-pink">Позвонить сейчас</a>
       </div>
-      <div class="contact-links">
-        <a href="https://t.me/innakimoptika" class="contact-link">
+      <div class="c-links">
+        <a href="tel:+998977722243" class="c-link">
+          <div class="c-icon">📞</div>
+          <div><div>Телефон</div><div class="c-sub">+998 97 772-22-43</div></div>
+        </a>
+        <a href="https://t.me/innakimoptika" class="c-link">
           <div class="c-icon">✈️</div>
-          <div>
-            <div>Telegram</div>
-            <div class="c-label">@innakimoptika</div>
-          </div>
+          <div><div>Telegram</div><div class="c-sub">@innakimoptika</div></div>
         </a>
-        <a href="https://linzauzb.uz" class="contact-link" target="_blank">
+        <a href="https://instagram.com/linza.uzb" class="c-link" target="_blank">
+          <div class="c-icon">📷</div>
+          <div><div>Instagram</div><div class="c-sub">@linza.uzb</div></div>
+        </a>
+        <a href="https://linzauzb.uz" class="c-link" target="_blank">
           <div class="c-icon">🌐</div>
-          <div>
-            <div>Сайт</div>
-            <div class="c-label">linzauzb.uz</div>
-          </div>
+          <div><div>Сайт</div><div class="c-sub">linzauzb.uz</div></div>
         </a>
-        <a href="#" class="contact-link">
+        <a href="#" class="c-link">
           <div class="c-icon">📍</div>
-          <div>
-            <div>Адрес</div>
-            <div class="c-label">Ташкент, Узбекистан</div>
-          </div>
+          <div><div>Адрес</div><div class="c-sub">пл. Хамид Олимжон, 2Б · Ташкент</div></div>
         </a>
       </div>
     </div>
@@ -620,9 +392,11 @@
 
   <!-- FOOTER -->
   <footer>
-    <img src="logo.png" alt="MirOchkoff" class="f-logo" onerror="this.style.display='none';document.getElementById('f-logo-text').style.display='block'">
-    <span id="f-logo-text" class="f-logo-text" style="display:none">MirOchkoff</span>
-    <p>© 2026 MirOchkoff · Ташкент · Премиальная оптика</p>
+    <div>
+      <img src="logo.png" alt="MirOchkoff" class="f-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="f-logo-text" style="display:none">MirOchkoff</span>
+    </div>
+    <p>© 2026 MirOchkoff · Ташкент · Твои глаза — главная драгоценность!</p>
   </footer>
 
 </body>
